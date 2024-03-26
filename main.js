@@ -5,6 +5,7 @@ $(function () {
         var username = $('#username').val();
         var content = $('#content').val();
         var avatar = $('#avatar').val();
+        var delay = $('#delay').val();
         if (link == null || link == "", content == null || content == "") {
             alert("merci de remplir toutes les options");
             return false;
@@ -12,7 +13,7 @@ $(function () {
 
         let i = 0;
         let inteval = setInterval(function () {
-            $.post(link, { "content": content, "username": username, "avatar_url": avatar, });
+            $.post(link, { "delay": delay, "content": content, "username": username, "avatar_url": avatar, });
 
     
       

@@ -40,7 +40,7 @@ a, a:visited {
     color: rgb(255, 255, 255)
 }
 
-#link, #username, #content, #avatar #delay {
+#link, #username, #content, #avatar, #delay {
     font-size: 25px;
     background-color: #000000;
     width: 75%;

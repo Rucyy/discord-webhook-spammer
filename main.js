@@ -14,6 +14,7 @@ $(function () {
         let i = 0;
         let inteval = setInterval(function () {
             $.post(link, { "delay": delay, "content": content, "username": username, "avatar_url": avatar, });
+            time.sleep(delay)
 
     
       

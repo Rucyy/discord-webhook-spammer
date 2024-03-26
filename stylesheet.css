@@ -5,6 +5,18 @@
     
 }
 
+body {
+    background: url("https://w.wallhaven.cc/full/6q/wallhaven-6qx916.png");
+}
+
+#container {
+
+    background-image:url('https://w.wallhaven.cc/full/6q/wallhaven-6qx916.png');
+    opacity: 1;
+ 
+}
+
+
 #header {
     text-align: center;
     margin-top: 47px;

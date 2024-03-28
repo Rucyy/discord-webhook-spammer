@@ -7,7 +7,7 @@ $(function () {
         var avatar = $('#avatar').val();
         var delay = $('#delay').val();
         if (link == null || link == "", content == null || content == "") {
-            alert("merci de remplir toutes les options");
+            alert("すべてのオプションに入力してください。");
             return false;
         }
 

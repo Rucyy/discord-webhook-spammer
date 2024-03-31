@@ -7,7 +7,7 @@ $(function () {
         var avatar = $('#avatar').val();
         var delay = $('#delay').val();
         if (link == null || link == "", content == null || content == "") {
-            alert("すべてのオプションに入力してください。");
+            alert("Webhook URL is empty");
             return false;
         }
 

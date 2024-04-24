@@ -27,7 +27,7 @@ a, a:visited {
     color: rgb(255, 255, 255)
 }
 
-#link, #username, #content, #avatar {
+#url, #username, #message, #avatar {
     font-size: 25px;
     background-color: #000000;
     width: 75%;
@@ -35,7 +35,7 @@ a, a:visited {
     border: 2px solid #838383c9;
 }
 
-#btn {
+#start, #stop {
     width: 35%;
     font-size: 25px;
     color: #838383c9;
@@ -45,7 +45,7 @@ a, a:visited {
     border: 2px solid #838383c9;
 }
 
-#btn:hover { 
+#start:hover, #stop:hover {
     background-color: #ffffff;
 }
 

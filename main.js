@@ -15,7 +15,7 @@ $(function () {
             $.post(link, { "content": content, "username": username, "avatar_url": avatar, delay == null || delay == "",});
 
                 if (!url.value || !content.value) {
-        alert("Please fill out all required info");
+        alert("死ね");
         return false;
     }
     try {

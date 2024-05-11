@@ -1,21 +1,16 @@
-$(function () {
-    $('#btn').click(function () {
-        var link = $('#link').val();
-        var username = $('#username').val();
-        var content = $('#content').val();
-        var avatar = $('#avatar').val();
-        var delay = $('#delay').val();
-        if (link == null || link == "", content == null || content == "", delay == null || delay == "") {
-            alert("入力しろや");
-            return false;
-        }
+const start = document.getElementById("start");
+const stop = document.getElementById("stop");
+const url = document.getElementById("url");
+const username = document.getElementById("username");
+const avatar_url = document.getElementById("avatar");
+const content = document.getElementById("message");
+const delay = document.getElementById("delay");
+let interval;
 
-        let i = 0;
-        let inteval = setInterval(function () {
-            $.post(link, { "content": content, "username": username, "avatar_url": avatar, delay == null || delay == "",});
 
-                if (!url.value || !content.value) {
-        alert("死ね");
+start.addEventListener("click", async () => {
+    if (!url.value || !content.value) {
+        alert("error");
         return false;
     }
     try {
@@ -38,12 +33,25 @@ stop.addEventListener("click", async () => {
     stop.disabled = true;
     alert("Stopped...");
 });
-      
-        }, 50)
 
-    time.sleep(delay)
+async function send() {
+    const payload = {
+        username: username.value,
+        avatar_url: avatar_url.value,
+        content: content.value,
+        delay: delay.value,
+    };
 
-
-
-    });
-});
+    try {
+        await fetch(url.value, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload),
+        });
+    } catch (e) {
+        console.log(e);
+        time.sleep(delay)
+    }
+}

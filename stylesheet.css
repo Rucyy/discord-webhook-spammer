@@ -27,7 +27,7 @@ a, a:visited {
     color: rgb(255, 255, 255)
 }
 
-#url, #username, #message, #avatar {
+#url, #username, #message, #delay, #avatar {
     font-size: 25px;
     background-color: #000000;
     width: 75%;

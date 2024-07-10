@@ -9,6 +9,10 @@ body {
     opacity: 1;
 }
 
+.center-align {
+    text-align: center;
+}
+
 form {
     margin-bottom: 20px;
 }

@@ -1,10 +1,7 @@
-const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const url = document.getElementById("url");
+const url = document.getElementById("webhook");
 const username = document.getElementById("username");
 const avatar_url = document.getElementById("avatar");
 const content = document.getElementById("message");
-const delay = document.getElementById("delay");
 let interval;
 
 
@@ -39,7 +36,6 @@ async function send() {
         username: username.value,
         avatar_url: avatar_url.value,
         content: content.value,
-        delay: delay.value,
     };
 
     try {
@@ -52,6 +48,5 @@ async function send() {
         });
     } catch (e) {
         console.log(e);
-        time.sleep(delay)
     }
 }

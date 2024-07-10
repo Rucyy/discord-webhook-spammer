@@ -1,12 +1,7 @@
-* {
-    text-align: center;
-    color: #838383c9;
-    font-family: "Arial Black", Gadget, sans-serif"
-    
-}
-
 body {
-    background-color: #000001;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
 }
 
 #container {
@@ -15,7 +10,12 @@ body {
 }
 
 .center-align {
-    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 p {
@@ -28,25 +28,26 @@ a, a:visited {
 }
 
 #url, #username, #message, #delay, #avatar {
-    font-size: 25px;
-    background-color: #000000;
-    width: 75%;
-    padding: 20px;
-    border: 2px solid #838383c9;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    color: #000;
 }
 
 #start, #stop {
-    width: 35%;
-    font-size: 25px;
-    color: #838383c9;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #000000;
-    border: 2px solid #838383c9;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #start:hover, #stop:hover {
-    background-color: #ffffff;
+    background-color: #45a049;
 }
 
 #log {

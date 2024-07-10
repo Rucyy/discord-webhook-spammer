@@ -9,13 +9,17 @@
 </head>
 
 <body>
-  <div id="container">
-    <div class="center-align">
-      <input id="url" placeholder="Webhook URL">
-        <input id="username" placeholder="Bot Username">
-        <input id="avatar" placeholder="Avatar URL">
-        <input id="message" placeholder="Message">
-        <input id="delay" placeholder="Delay">
+  <div class="container">
+    <h2>Discord Webhook Spammer</h2>
+    <form id="messageForm">
+        <label for="webhook">Webhook URL:</label>
+        <input type="text" id="webhook" name="webhook" placeholder="https://discord.com/"> required><br><br>
+        <label for="webhook">Bot Username:</label>
+        <input type="text" id="username" name="username" placeholder=""> required><br><br>
+        <label for="message">Avatar URL:</label>
+        <input type="text" id="avatar" name="avatar" placeholder=""> required><br><br>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" placeholder=""> required><br><br>
       </div>
       <div class="buttons">
         <button id="start">Start</button>

@@ -9,6 +9,25 @@ body {
     opacity: 1;
 }
 
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #000;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    color: #000;
+}
+
 p {
     font-family: "Arial Black, Gadget, sans-serif";
     font-size: 27px;

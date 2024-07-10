@@ -18,7 +18,7 @@ a, a:visited {
     color: rgb(255, 255, 255)
 }
 
-#url, #username, #message, #delay, #avatar {
+#webhook, #username, #message, #avatar {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;

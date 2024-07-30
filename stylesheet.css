@@ -41,7 +41,7 @@ a, a:visited {
     color: rgb(255, 255, 255)
 }
 
-#webhook, #username, #message, #avatar {
+#webhook, #username, #message, #avatar, #delay {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -64,7 +64,20 @@ a, a:visited {
     background-color: #45a049;
 }
 
-#log {
+.warningDiv {
+    color: yellow;
     font-weight: bold;
-    color: #000;
+    margin-top: 10px;
+}
+
+.logContainer {
+    background-color: black;
+    color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: scroll;
+    font-family: monospace;
+    white-space: pre-wrap;
+    margin-top: 20px;
+    padding: 10px;
 }

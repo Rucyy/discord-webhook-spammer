@@ -21,14 +21,12 @@
         <label for="message">Message:</label>
         <input type="text" id="message" name="message" placeholder="Hello World">
         <label for="delay">Delay:</label>
-        <input type="text" id="delay" name="delay" placeholder="1">
+        <input type="number" id="delay" name="delay" placeholder="1" min="1">
     </div>
       <div class="buttons">
         <button id="start">Start</button>
         <button id="stop">Stop</button>
-        <center>
-          <p id='log'></p>
-        </center>
+        <div class="logContainer" id="logContainer"></div>
     </div>
   </div>
 

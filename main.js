@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     start.addEventListener("click", function (e) {
         e.preventDefault();
         const webhook = url.value;
+        const username = username.value,
+        const avatar = avatar_url.value,
         const message = content.value;
         const delay = parseInt(delay.value); 
         const timestamp = getTimeStamp(); 

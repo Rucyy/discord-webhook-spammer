@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const webhook = url.value;
         const username = username.value,
         const avatar = avatar_url.value,
-        const message = content.value;
+        const message = content.value,
         const delay = parseInt(delay.value); 
         const timestamp = getTimeStamp(); 
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         warningDiv.innerHTML = ''; 
     }); 
 
-    function sendMessage(webhook, timestamp) { 
+    function sendMessage(webhook, username, avatar, timestamp) { 
         fetch(webhook, { 
             method: 'POST', 
             headers: { 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }); 
     } 
 
-    function sendMessageWithMessage(webhook, message, timestamp) { 
+    function sendMessageWithMessage(webhook, username, avatar, message, timestamp) { 
         fetch(webhook, { 
             method: 'POST', 
             headers: { 

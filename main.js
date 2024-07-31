@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () { 
-    const webhook_url = document.getElementById("webhook");
+    const url = document.getElementById("webhook");
     const username = document.getElementById("username");
     const avatar_url = document.getElementById("avatar");
     const content = document.getElementById("message");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     start.addEventListener("click", function (e) {
         e.preventDefault();
-        const webhook = webhook_url.value;
+        const webhook = url.value;
         const message = content.value;
         const delay = parseInt(delay.value); 
         const timestamp = getTimeStamp(); 

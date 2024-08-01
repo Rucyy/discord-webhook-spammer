@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () { 
     const webhook_url = document.getElementById("webhook");
     const username = document.getElementById("username");
     const avatar_url = document.getElementById("avatar");

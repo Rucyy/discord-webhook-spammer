@@ -1,33 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () { 
-    const url = document.getElementById("webhook");
-    const username = document.getElementById("username");
-    const avatar_url = document.getElementById("avatar");
-    const content = document.getElementById("message");
-    const delay = document.getElementById("delay");
-    const start = document.getElementById("start"); 
-    const stop = document.getElementById("stop"); 
+    const webhookUrlInput = document.getElementById("webhookUrl"); 
+    const messageInput = document.getElementById("message"); 
+    const secondsPerMessageInput = document.getElementById("messageRate"); 
+    const startButton = document.getElementById("startButton"); 
+    const stopButton = document.getElementById("stopButton"); 
     const warningDiv = document.getElementById("warningDiv"); 
     const logContainer = document.getElementById("logContainer"); 
 
     let intervalId; 
 
-    start.addEventListener("click", function (e) {
-        e.preventDefault();
-        const webhook = url.value;
-        const username = username.value,
-        const avatar = avatar_url.value,
-        const message = content.value,
-        const delay = parseInt(delay.value); 
+    startButton.addEventListener("click", function (e) { 
+        e.preventDefault(); 
+        const webhookUrl = webhookUrlInput.value; 
+        const message = messageInput.value; 
+        const secondsPerMessage = parseInt(secondsPerMessageInput.value); 
         const timestamp = getTimeStamp(); 
 
-        if (!webhook.startsWith("https://discord.com/api/webhooks/")) { 
-            warningDiv.innerHTML = '⚠️ Invalid webhook URL.'; 
-            start.classList.add("invalidUrl"); 
-            stop.classList.remove("invalidUrl"); 
+        if (!webhookUrl.startsWith("https://discord.com/api/webhooks/")) { 
+            warningDiv.innerHTML = '⚠️ Invalid webhook URL. Please enter a valid one.'; 
+            startButton.classList.add("invalidUrl"); 
+            stopButton.classList.remove("invalidUrl"); 
             return; 
         } 
 
-        if (!message || !content || !webhook) { 
+        if (!message || !secondsPerMessage || !webhookUrl) { 
             warningDiv.innerHTML = '⚠️ Please fill in the fields that you left empty.';
             return;
         } else { 
@@ -36,31 +32,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         intervalId = setInterval(function () { 
             if (!message) { 
-                sendMessage(webhook, timestamp); 
+                sendMessage(webhookUrl, timestamp); 
             } else { 
-                sendMessageWithMessage(webhook, message, timestamp); 
+                sendMessageWithMessage(webhookUrl, message, timestamp); 
             } 
-        }, (content * 1000)); // Corrected to use content 
+        }, (secondsPerMessage * 1000)); // Corrected to use secondsPerMessage 
 
-        start.disabled = true; 
-        stop.disabled = false; 
-        start.classList.add("running"); 
-        stop.classList.remove("running"); 
+        startButton.disabled = true; 
+        stopButton.disabled = false; 
+        startButton.classList.add("running"); 
+        stopButton.classList.remove("running"); 
 
         logContainer.innerHTML = ''; 
     }); 
 
-    stop.addEventListener("click", function () { 
+    stopButton.addEventListener("click", function () { 
         clearInterval(intervalId); 
-        start.disabled = false; 
-        stop.disabled = true; 
-        start.classList.remove("running"); 
-        stop.classList.add("running"); 
+        startButton.disabled = false; 
+        stopButton.disabled = true; 
+        startButton.classList.remove("running"); 
+        stopButton.classList.add("running"); 
         warningDiv.innerHTML = ''; 
     }); 
 
-    function sendMessage(webhook, username, avatar, timestamp) { 
-        fetch(webhook, { 
+    function sendMessage(webhookUrl, timestamp) { 
+        fetch(webhookUrl, { 
             method: 'POST', 
             headers: { 
                 'Content-Type': 'application/json', 
@@ -89,8 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }); 
     } 
 
-    function sendMessageWithMessage(webhook, username, avatar, message, timestamp) { 
-        fetch(webhook, { 
+    function sendMessageWithMessage(webhookUrl, message, timestamp) { 
+        fetch(webhookUrl, { 
             method: 'POST', 
             headers: { 
                 'Content-Type': 'application/json', 

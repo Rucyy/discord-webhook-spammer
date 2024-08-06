@@ -6,12 +6,9 @@
     <title>Discord Webhook Spammer</title>
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
 </head>
-
 <body>
   <div class="container">
-    <div class="center-align">
     <h1>Discord Webhook Spammer</h1>
-    <form id="messageForm">
         <label for="webhook">Webhook URL:</label>
         <input type="text" id="webhook" name="webhook" placeholder="https://discord.com/api/webhooks/" autocomplete="off">
         <label for="username">Bot Username:</label>
@@ -22,14 +19,11 @@
         <input type="text" id="message" name="message" placeholder="Hello World" autocomplete="off">
         <label for="delay">Delay:</label>
         <input type="number" id="delay" name="delay" placeholder="1" min="1" autocomplete="off">
-    </div>
         <button id="start" class="start" onclick="start()">Start</button>  
         <button id="stop" class="stop" onclick="stop()" disabled>Stop</button>
         <div class="warningDiv" id="warningDiv"></div> 
         <div class="logContainer" id="logContainer"></div>
     </div>
-  </div>
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
-
 </html>

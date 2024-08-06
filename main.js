@@ -57,12 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
         warningDiv.innerHTML = ''; 
     }); 
 
-    function sendMessage(webhook, timestamp) { 
-        fetch(webhook, { 
-            method: 'POST', 
-            headers: { 
-                'Content-Type': 'application/json', 
-            }, 
+    async function send() {
+    const payload = {
+        username: username.value,
+        avatar_url: avatar_url.value,
+        content: content.value,
+    };
+
+    try {
+        await fetch(url.value, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ content: '' }), 
         }) 
         .then(response => { 

@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         username: username.value,
         avatar_url: avatar_url.value,
         content: content.value,
+        timestamp: timestamp.value,
     };
 
     try {
@@ -94,12 +95,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }); 
     } 
 
-    function sendMessageWithMessage(webhook, message, timestamp) { 
-        fetch(webhook, { 
-            method: 'POST', 
-            headers: { 
-                'Content-Type': 'application/json', 
-            }, 
+async function del() {
+    try {
+        await fetch(delUrl.value, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({ content: message }), 
         }) 
         .then(response => { 
